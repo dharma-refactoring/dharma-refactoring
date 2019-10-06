@@ -127,6 +127,14 @@ const IndexPage = () => (
           Swift, Kotlin, C#, Java, ReactNative, React, TypeScript, JavaScript,
           Ruby, etc...
         </dd>
+        <dt>プログラミング時に重視していること</dt>
+        <dd>
+          <ul>
+            <li>オブジェクト指向</li>
+            <li>読みやすく意図が伝わりやすいコード</li>
+            <li>DRY、KISS、YAGNIなどの各種原則</li>
+          </ul>
+        </dd>
         <dt>主な資格</dt>
         <dd>
           <ul>
