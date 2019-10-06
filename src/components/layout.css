@@ -1,13 +1,15 @@
 html {
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
+  font-size: 62.5%;
 }
 body {
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
+  font-weight: normal;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: hsla(0, 0%, 0%, 0.8);
+  word-wrap: break-word;
 }
 article,
 aside,
@@ -61,20 +63,15 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 mark {
   background-color: #ff0;
   color: #000;
 }
 small {
-  font-size: 80%;
+  font-size: 0.8rem;
 }
 sub,
 sup {
-  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -95,7 +92,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-size: 1em;
 }
 figure {
@@ -185,11 +182,6 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
-  font: 112.5%/1.45em georgia, serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
 * {
   box-sizing: inherit;
 }
@@ -198,17 +190,6 @@ html {
 }
 *:after {
   box-sizing: inherit;
-}
-body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 img {
   max-width: 100%;
@@ -231,11 +212,12 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.1;
+  font-size: 3em;
 }
 h2 {
   margin-left: 0;
@@ -247,7 +229,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -263,7 +245,7 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -279,7 +261,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -295,7 +277,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -311,7 +293,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -370,8 +352,10 @@ dd {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-size: 1.3rem;
 }
 p {
+  font-size: 1.3rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -499,12 +483,14 @@ strong {
 }
 dt {
   font-weight: bold;
+  font-size: 1.3rem;
 }
 th {
   font-weight: bold;
 }
 li {
   margin-bottom: calc(1.45rem / 2);
+  font-size: 1.3rem;
 }
 ol li {
   padding-left: 0;
@@ -587,7 +573,7 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: 'Source Code Pro', 'Noto Sans JP', monospace, sans-serif;
+  font-family: "Source Code Pro", "Noto Sans JP", monospace, sans-serif;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -610,7 +596,13 @@ pre tt:after {
   content: "";
 }
 @media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
+}
+
+.anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer {
+  font-size: 1.3rem;
 }
