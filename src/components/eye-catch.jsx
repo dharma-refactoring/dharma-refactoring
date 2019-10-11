@@ -18,15 +18,34 @@ const EyeCatch = () => {
     query {
       placeholderImage: file(relativePath: { eq: "dharma_eyecatch.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 300, quality: 100) {
             ...GatsbyImageSharpFluid
+            presentationWidth
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <NonStretchedImage fluid={data.placeholderImage.childImageSharp.fluid} />
+  )
+}
+
+const NonStretchedImage = props => {
+  let normalizedProps = props
+  if (props.fluid && props.fluid.presentationWidth) {
+    normalizedProps = {
+      ...props,
+      style: {
+        ...(props.style || {}),
+        maxWidth: props.fluid.presentationWidth,
+        margin: "0 auto",
+      },
+    }
+  }
+
+  return <Img {...normalizedProps} />
 }
 
 export default EyeCatch

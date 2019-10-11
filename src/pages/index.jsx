@@ -23,7 +23,7 @@ const IndexPage = () => (
       <p>
         お仕事の依頼やその他ご質問等ありましたら
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSelHIapu0fFtcuzPWgp2eztalMAzCauIabd1jmexdFZKDw1cw/viewform?usp=sf_link">
-          こちらフォーム
+          こちらのフォーム
         </a>
         よりお問い合わせください。
       </p>
