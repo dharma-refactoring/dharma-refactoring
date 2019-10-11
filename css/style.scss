@@ -1,0 +1,109 @@
+$primaryColor: #d96038;
+$secondaryColor: #3bd960;
+$onPrimaryColor: #1c1c1c;
+
+:root {
+  --mdc-theme-primary: #d96038;
+  --mdc-theme-secondary: #3bd960;
+  --mdc-theme-on-primary: #1c1c1c;
+  --mdc-theme-on-secondary: #000000;
+}
+
+$baseFont: "Noto Sans JP",
+sans-serif;
+
+$robotFont: Roboto,
+sans-serif;
+
+*,
+.base-font {
+  font-family: $baseFont;
+}
+
+body {
+  background: url(./images/background.jpg) fixed no-repeat center center;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+}
+
+@mixin top-item($fontSize: 1rem) {
+  font-family: $baseFont;
+  font-size: $fontSize;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.title {
+  @include top-item(1.25rem);
+}
+
+.menu {
+  @include top-item(1rem);
+  margin-right: 1rem;
+}
+
+.introduction {
+  padding: 5rem 1rem 1rem 1rem;
+}
+
+.contents {
+  padding: 1rem;
+  position: relative;
+}
+
+.tile-menu {
+  position: relative;
+  float: left;
+  width: 300px;
+  text-align: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tile-menu-content {
+  color: $onPrimaryColor;
+  text-decoration: none;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: 20;
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14rem;
+  height: 100%;
+  opacity: 30%;
+  color: $primaryColor;
+  z-index: 10;
+}
+
+.page-contents {
+  padding: 0 1.5rem;
+
+  p {
+    margin-left: 2rem;
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+}
+
+.headline-icon {
+  font-size: 2rem;
+  color: $primaryColor;
+  margin-right: 0.5rem;
+}
