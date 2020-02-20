@@ -1,10 +1,9 @@
-module Main exposing (..)
+module Main exposing (main)
 
 import Browser
 import Html exposing (Html, text)
 import Html.Attributes exposing (class)
 import Html.Lazy exposing (lazy2)
-import Material.IconButton exposing (iconButton, iconButtonConfig)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
 
 
@@ -30,7 +29,7 @@ init =
 
 
 view : Model -> Html Message
-view model =
+view _ =
     topAppBar topAppBarConfig
         [ lazy2 TopAppBar.row
             []
@@ -46,8 +45,8 @@ view model =
 -- MESSAGE
 
 
-type Message
-    = None
+type alias Message =
+    {}
 
 
 
@@ -55,7 +54,7 @@ type Message
 
 
 update : Message -> Model -> ( Model, Cmd Message )
-update message model =
+update _ model =
     ( model, Cmd.none )
 
 
@@ -64,7 +63,7 @@ update message model =
 
 
 subscriptions : Model -> Sub Message
-subscriptions model =
+subscriptions _ =
     Sub.none
 
 
