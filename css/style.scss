@@ -15,3 +15,24 @@ sans-serif;
 .base-font {
   font-family: $baseFont;
 }
+
+body {
+  background: url(./images/background.png) fixed no-repeat center center;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+}
+
+.menu {
+  font-family: $baseFont;
+  margin-right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.introduction {
+  padding: 5rem 1rem 1rem 1rem;
+}
