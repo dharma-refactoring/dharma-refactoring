@@ -1,0 +1,17 @@
+:root {
+  --mdc-theme-primary: #d96038;
+  --mdc-theme-secondary: #3bd960;
+  --mdc-theme-on-primary: #1c1c1c;
+  --mdc-theme-on-secondary: #000000;
+}
+
+$baseFont: "Noto Sans JP",
+sans-serif;
+
+$robotFont: Roboto,
+sans-serif;
+
+*,
+.base-font {
+  font-family: $baseFont;
+}
