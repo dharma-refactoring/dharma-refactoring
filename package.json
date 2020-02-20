@@ -16,7 +16,12 @@
     "sass": "^1.25.0"
   },
   "scripts": {
-    "test": "yarn run test"
+    "start": "parcel index.html",
+    "build": "parcel build -d public index.html",
+    "format": "elm-format . --yes",
+    "lint": "elm-analyse",
+    "pretest": "yarn run format && yarn run lint",
+    "test": "elm-test"
   },
   "repository": {
     "type": "git",
@@ -29,5 +34,6 @@
   "homepage": "https://github.com/dharma-refactoring/dharma-refactoring#readme",
   "sass": {
     "includePaths": ["./node_modules"]
-  }
+  },
+  "license": "ISC"
 }

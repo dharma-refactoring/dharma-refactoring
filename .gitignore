@@ -125,7 +125,8 @@ dist
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -154,4 +155,4 @@ Temporary Items
 *.sass.map
 *.scss.map
 
-
+public/
