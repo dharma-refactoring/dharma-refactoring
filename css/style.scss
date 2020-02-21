@@ -88,3 +88,22 @@ body {
   color: $primaryColor;
   z-index: 10;
 }
+
+.page-contents {
+  padding: 0 1.5rem;
+
+  p {
+    margin-left: 2rem;
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+}
+
+.headline-icon {
+  font-size: 2rem;
+  color: $primaryColor;
+  margin-right: 0.5rem;
+}

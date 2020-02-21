@@ -6,8 +6,9 @@ import Html exposing (Html, div, text)
 import Html.Attributes exposing (class, href)
 import Html.Lazy exposing (lazy2)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
+import Page.Service
 import Page.Top
-import Shared.Message exposing (Message(..))
+import Shared exposing (Message(..))
 import Url
 import Url.Parser exposing (Parser, map, oneOf, s)
 
@@ -72,7 +73,16 @@ contentsFrom : Maybe Route -> List (Html Message)
 contentsFrom route =
     case route of
         Just Service ->
-            [ text "service" ]
+            Page.Service.contents
+
+        Just Pricing ->
+            [ text "pricing" ]
+
+        Just History ->
+            [ text "history" ]
+
+        Just Profile ->
+            [ text "profile" ]
 
         _ ->
             Page.Top.contents

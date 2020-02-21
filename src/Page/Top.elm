@@ -6,7 +6,7 @@ import Html.Lazy exposing (lazy2)
 import Material.Card as Card exposing (cardPrimaryActionConfig)
 import Material.Icon exposing (icon, iconConfig)
 import Material.Ripple as Ripple exposing (boundedRipple, rippleConfig)
-import Shared.Message exposing (Message)
+import Shared exposing (Message)
 
 
 contents : List (Html Message)
