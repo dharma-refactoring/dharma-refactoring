@@ -6,6 +6,7 @@ import Html exposing (Html, div, text)
 import Html.Attributes exposing (class, href)
 import Html.Lazy exposing (lazy2)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
+import Page.Pricing
 import Page.Service
 import Page.Top
 import Shared exposing (Message(..))
@@ -76,7 +77,7 @@ contentsFrom route =
             Page.Service.contents
 
         Just Pricing ->
-            [ text "pricing" ]
+            Page.Pricing.contents
 
         Just History ->
             [ text "history" ]
@@ -126,7 +127,7 @@ introduction =
         , Html.p []
             [ text "スマートフォンアプリやWebシステムを始めとしたシステム開発をお手伝いします。" ]
         , Html.p []
-            [ text "お仕事の依頼やその他ご質問等ありましたら"
+            [ text "お仕事のご依頼や、その他ご質問等ありましたら"
             , Html.a [ href "https://docs.google.com/forms/d/e/1FAIpQLSelHIapu0fFtcuzPWgp2eztalMAzCauIabd1jmexdFZKDw1cw/viewform?usp=sf_link" ] [ text "こちらのフォーム" ]
             , text "よりお問い合わせください。"
             ]
