@@ -6,6 +6,7 @@ import Html exposing (Html, div, text)
 import Html.Attributes exposing (class, href)
 import Html.Lazy exposing (lazy2)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
+import Page.History
 import Page.Pricing
 import Page.Service
 import Page.Top
@@ -80,7 +81,7 @@ contentsFrom route =
             Page.Pricing.contents
 
         Just History ->
-            [ text "history" ]
+            Page.History.contents
 
         Just Profile ->
             [ text "profile" ]
