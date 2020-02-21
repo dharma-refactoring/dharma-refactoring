@@ -1,5 +1,6 @@
 $primaryColor: #d96038;
 $secondaryColor: #3bd960;
+$onPrimaryColor: #1c1c1c;
 
 :root {
   --mdc-theme-primary: #d96038;
@@ -26,9 +27,11 @@ body {
   background-blend-mode: lighten;
 }
 
-.title {
+@mixin top-item($fontSize: 1rem) {
   font-family: $baseFont;
-  font-size: 1.25rem;
+  font-size: $fontSize;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
@@ -36,15 +39,13 @@ body {
   }
 }
 
-.menu {
-  font-family: $baseFont;
-  font-size: 1rem;
-  margin-right: 1rem;
-  cursor: pointer;
+.title {
+  @include top-item(1.25rem);
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.menu {
+  @include top-item(1rem);
+  margin-right: 1rem;
 }
 
 .introduction {
@@ -64,9 +65,12 @@ body {
   margin-right: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .tile-menu-content {
+  color: $onPrimaryColor;
+  text-decoration: none;
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;

@@ -1,14 +1,37 @@
 module Main exposing (main)
 
 import Browser
+import Browser.Navigation as Navigation
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class, href)
-import Html.Events exposing (onClick)
 import Html.Lazy exposing (lazy2)
-import Material.Card as Card exposing (cardPrimaryActionConfig)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
-import Material.Ripple as Ripple exposing (boundedRipple, rippleConfig)
-import Material.Icon exposing (icon, iconConfig)
+import Page.Top
+import Shared.Message exposing (Message(..))
+import Url
+import Url.Parser exposing (Parser, map, oneOf, s)
+
+
+type Route
+    = Service
+    | Pricing
+    | History
+    | Profile
+
+
+routeParser : Parser (Route -> a) a
+routeParser =
+    oneOf
+        [ map Service (s "service")
+        , map Pricing (s "pricing")
+        , map History (s "history")
+        , map Profile (s "profile")
+        ]
+
+
+routeFrom : Url.Url -> Maybe Route
+routeFrom url =
+    Url.Parser.parse routeParser url
 
 
 
@@ -16,35 +39,43 @@ import Material.Icon exposing (icon, iconConfig)
 
 
 type alias Model =
-    {}
+    { key : Navigation.Key
+    , route : Maybe Route
+    }
 
 
 
 -- INIT
 
 
-init : ( Model, Cmd Message )
-init =
-    ( Model, Cmd.none )
+init : () -> Url.Url -> Navigation.Key -> ( Model, Cmd Message )
+init _ url key =
+    ( Model key (routeFrom url), Cmd.none )
 
 
 
 -- VIEW
 
 
-view : Model -> Html Message
-view _ =
-    div []
+view : Model -> Browser.Document Message
+view model =
+    { title = "だるまRefactoring"
+    , body =
         [ topBar
         , introduction
-        , div [ class "contents" ]
-          [
-            tileMenu Service "サービス内容" "devices"
-          , tileMenu Service "料金プラン" "account_balance_wallet"
-          , tileMenu Service "開発事例" "library_books"
-          , tileMenu Service "プロフィール" "account_circle"
-          ]
+        , div [ class "contents" ] (contentsFrom model.route)
         ]
+    }
+
+
+contentsFrom : Maybe Route -> List (Html Message)
+contentsFrom route =
+    case route of
+        Just Service ->
+            [ text "service" ]
+
+        _ ->
+            Page.Top.contents
 
 
 topBar : Html Message
@@ -57,10 +88,10 @@ topBar =
                 [ appTitle ]
             , lazy2 TopAppBar.section
                 [ TopAppBar.alignEnd ]
-                [ menu Service "サービス内容"
-                , menu Pricing "料金プラン"
-                , menu History "開発事例"
-                , menu Profile "プロフィール"
+                [ menu "/service" "サービス内容"
+                , menu "/pricing" "料金プラン"
+                , menu "/history" "開発事例"
+                , menu "/profile" "プロフィール"
                 ]
             ]
         ]
@@ -68,17 +99,18 @@ topBar =
 
 appTitle : Html Message
 appTitle =
-    lazy2 Html.span [ class "title", onClick Top ] [ text "だるま Refactoring" ]
+    lazy2 Html.a [ class "title", href "/" ] [ text "だるま Refactoring" ]
 
 
-menu : Message -> String -> Html Message
-menu message title =
-    lazy2 Html.a [ class "menu", onClick message ] [ text title ]
+menu : String -> String -> Html Message
+menu path title =
+    lazy2 Html.a [ class "menu", href path ] [ text title ]
 
 
 introduction : Html Message
 introduction =
-    div [ class "introduction" ]
+    lazy2 div
+        [ class "introduction" ]
         [ Html.p []
             [ text "現在は本業の合間に副業でフリーランスエンジニアとして活動しています。" ]
         , Html.p []
@@ -90,41 +122,6 @@ introduction =
             ]
         ]
 
-tileMenu: Message -> String -> String -> Html Message
-tileMenu message title iconName =
-    div [ class "tile-menu" ]
-        [ Card.card Card.cardConfig
-            { blocks = card message title iconName
-            , actions = Nothing
-            }
-        , boundedRipple { rippleConfig | color = Just Ripple.AccentColor}
-        ]
-
-
-card : Message -> String -> String -> List (Card.CardBlock Message)
-card message title iconName =
-    Card.cardPrimaryAction
-        { cardPrimaryActionConfig | onClick = Just message }
-        [ Card.cardBlock <|
-            div []
-              [
-                Html.h2 [ class "tile-menu-content" ] [ text title ]
-              , icon { iconConfig | additionalAttributes = [ class "card-background" ] } iconName
-              ]
-        ]
-
-
-
--- MESSAGE
-
-
-type Message
-    = Top
-    | Service
-    | Pricing
-    | History
-    | Profile
-
 
 
 -- UPDATE
@@ -133,7 +130,18 @@ type Message
 update : Message -> Model -> ( Model, Cmd Message )
 update message model =
     case message of
-        _ ->
+        LinkClicked urlRequest ->
+            case urlRequest of
+                Browser.Internal url ->
+                    ( model, Navigation.pushUrl model.key (Url.toString url) )
+
+                Browser.External href ->
+                    ( model, Navigation.load href )
+
+        UrlChanged url ->
+            ( { model | route = routeFrom url }, Cmd.none )
+
+        PageChanged ->
             ( model, Cmd.none )
 
 
@@ -150,11 +158,13 @@ subscriptions _ =
 -- MAIN
 
 
-main : Program (Maybe {}) Model Message
+main : Program () Model Message
 main =
-    Browser.element
-        { init = always init
+    Browser.application
+        { init = init
         , view = view
         , update = update
         , subscriptions = subscriptions
+        , onUrlChange = UrlChanged
+        , onUrlRequest = LinkClicked
         }
