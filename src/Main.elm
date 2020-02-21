@@ -5,8 +5,10 @@ import Html exposing (Html, div, text)
 import Html.Attributes exposing (class, href)
 import Html.Events exposing (onClick)
 import Html.Lazy exposing (lazy2)
+import Material.Card as Card exposing (cardPrimaryActionConfig)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
-import Material.Typography as Typography
+import Material.Ripple as Ripple exposing (boundedRipple, rippleConfig)
+import Material.Icon exposing (icon, iconConfig)
 
 
 
@@ -35,6 +37,13 @@ view _ =
     div []
         [ topBar
         , introduction
+        , div [ class "contents" ]
+          [
+            tileMenu Service "サービス内容" "devices"
+          , tileMenu Service "料金プラン" "account_balance_wallet"
+          , tileMenu Service "開発事例" "library_books"
+          , tileMenu Service "プロフィール" "account_circle"
+          ]
         ]
 
 
@@ -50,6 +59,7 @@ topBar =
                 [ TopAppBar.alignEnd ]
                 [ menu Service "サービス内容"
                 , menu Pricing "料金プラン"
+                , menu History "開発事例"
                 , menu Profile "プロフィール"
                 ]
             ]
@@ -58,12 +68,12 @@ topBar =
 
 appTitle : Html Message
 appTitle =
-    lazy2 Html.span [ TopAppBar.title, class "base-font" ] [ text "だるま Refactoring" ]
+    lazy2 Html.span [ class "title", onClick Top ] [ text "だるま Refactoring" ]
 
 
 menu : Message -> String -> Html Message
 menu message title =
-    lazy2 Html.a [ Typography.subtitle1, class "menu", onClick message ] [ text title ]
+    lazy2 Html.a [ class "menu", onClick message ] [ text title ]
 
 
 introduction : Html Message
@@ -80,14 +90,39 @@ introduction =
             ]
         ]
 
+tileMenu: Message -> String -> String -> Html Message
+tileMenu message title iconName =
+    div [ class "tile-menu" ]
+        [ Card.card Card.cardConfig
+            { blocks = card message title iconName
+            , actions = Nothing
+            }
+        , boundedRipple { rippleConfig | color = Just Ripple.AccentColor}
+        ]
+
+
+card : Message -> String -> String -> List (Card.CardBlock Message)
+card message title iconName =
+    Card.cardPrimaryAction
+        { cardPrimaryActionConfig | onClick = Just message }
+        [ Card.cardBlock <|
+            div []
+              [
+                Html.h2 [ class "tile-menu-content" ] [ text title ]
+              , icon { iconConfig | additionalAttributes = [ class "card-background" ] } iconName
+              ]
+        ]
+
 
 
 -- MESSAGE
 
 
 type Message
-    = Service
+    = Top
+    | Service
     | Pricing
+    | History
     | Profile
 
 
