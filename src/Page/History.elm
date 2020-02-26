@@ -14,7 +14,25 @@ contents =
             [ class "page-contents" ]
             [ Html.h1 [] [ text "開発事例" ]
             , headline "フリーランスでの事例" "portrait"
-            , sentense "残念ながらまだフリーランスとしての公表できる事例はありません。"
+            , sentense "※ 表の上にあるほど新しい情報です。"
+            , dataTable dataTableConfig
+                { thead =
+                    [ dataTableHeaderRow []
+                        [ headerCell "業務内容"
+                        , headerCell "言語/技術"
+                        , headerCell "役割"
+                        , headerCell "工程"
+                        ]
+                    ]
+                , tbody =
+                    [ dataTableRow dataTableRowConfig
+                        [ cell "キャンプ場予約Webシステム"
+                        , cell "PHP, Cake PHP, MySQL, Docker"
+                        , cell "PG, テスタ"
+                        , cell "実装、単体/結合テスト"
+                        ]
+                    ]
+                }
             , headline "業務経歴" "library_books"
             , sentense "※ 所属会社で手掛けた主な業務です。全てではありません。"
             , sentense "※ 表の上にあるほど新しい情報です。"

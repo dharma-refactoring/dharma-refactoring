@@ -8,6 +8,7 @@ import Html.Lazy exposing (lazy2)
 import Material.TopAppBar as TopAppBar exposing (topAppBar, topAppBarConfig)
 import Page.History
 import Page.Pricing
+import Page.Profile
 import Page.Service
 import Page.Top
 import Shared exposing (Message(..))
@@ -84,7 +85,7 @@ contentsFrom route =
             Page.History.contents
 
         Just Profile ->
-            [ text "profile" ]
+            Page.Profile.contents
 
         _ ->
             Page.Top.contents
