@@ -102,7 +102,7 @@ topBar =
             , lazy2 TopAppBar.section
                 [ TopAppBar.alignEnd ]
                 [ menu "/service" "サービス内容"
-                , menu "/pricing" "料金プラン"
+                , menu "/pricing" "費用"
                 , menu "/history" "開発事例"
                 , menu "/profile" "プロフィール"
                 ]

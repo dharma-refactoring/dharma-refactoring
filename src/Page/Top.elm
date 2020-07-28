@@ -12,7 +12,7 @@ import Shared exposing (Message)
 contents : List (Html Message)
 contents =
     [ tileMenu "/service" "サービス内容" "devices"
-    , tileMenu "/pricing" "料金プラン" "account_balance_wallet"
+    , tileMenu "/pricing" "費用" "account_balance_wallet"
     , tileMenu "/history" "開発事例" "library_books"
     , tileMenu "/profile" "プロフィール" "account_circle"
     ]
