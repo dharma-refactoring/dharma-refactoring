@@ -1,7 +1,7 @@
 module Page.History exposing (contents)
 
 import Html exposing (Html, text)
-import Html.Attributes exposing (class, style)
+import Html.Attributes exposing (class, href, style, target)
 import Html.Lazy exposing (lazy2)
 import Material.DataTable exposing (dataTable, dataTableCell, dataTableCellConfig, dataTableConfig, dataTableHeaderCell, dataTableHeaderCellConfig, dataTableHeaderRow, dataTableRow, dataTableRowConfig)
 import Shared exposing (Message, headline, pageContents, sentense)
@@ -26,6 +26,12 @@ contents =
                     ]
                 , tbody =
                     [ dataTableRow dataTableRowConfig
+                        [ linkCell "さけコミ" "https://sakecom.jp"
+                        , cell "Elm, Ruby on Rails, PostgreSQL, GCP(Cloud Run)"
+                        , cell "SE, PG, テスタ"
+                        , cell "仕様検討、設計、実装、単体/結合テスト、運用保守"
+                        ]
+                    , dataTableRow dataTableRowConfig
                         [ cell "キャンプ場予約Webシステム"
                         , cell "PHP, Cake PHP, MySQL, Docker"
                         , cell "PG, テスタ"
@@ -186,3 +192,9 @@ headerCell title =
 cell : String -> Material.DataTable.DataTableCell Message
 cell title =
     dataTableCell { dataTableCellConfig | additionalAttributes = [ style "white-space" "normal" ] } [ text title ]
+
+
+linkCell : String -> String -> Material.DataTable.DataTableCell Message
+linkCell title url =
+    dataTableCell { dataTableCellConfig | additionalAttributes = [ style "white-space" "normal" ] }
+        [ Html.a [ href url, target "blank" ] [ text title ] ]
