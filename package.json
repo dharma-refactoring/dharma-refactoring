@@ -10,7 +10,7 @@
     "elm-format": "^0.8.2",
     "elm-hot": "^1.1.4",
     "elm-test": "^0.19.1-revision2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "material-components-web": "^5.0.0",
     "material-components-web-elm": "^2.1.1",
     "node-forge": "^0.10.0",
