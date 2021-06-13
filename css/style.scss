@@ -9,11 +9,9 @@ $onPrimaryColor: #1c1c1c;
   --mdc-theme-on-secondary: #000000;
 }
 
-$baseFont: "Noto Sans JP",
-sans-serif;
+$baseFont: "Noto Sans JP", sans-serif;
 
-$robotFont: Roboto,
-sans-serif;
+$robotFont: Roboto, sans-serif;
 
 *,
 .base-font {
@@ -82,7 +80,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 14rem;
+  font-size: 14rem !important;
   height: 100%;
   opacity: 30%;
   color: $primaryColor;

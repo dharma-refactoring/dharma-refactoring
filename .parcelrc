@@ -1,0 +1,14 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{elm}": [
+      "@parcel/transformer-elm"
+    ],
+    "*.{scss}": [
+      "@parcel/transformer-sass"
+    ],
+    "*.{js}": [
+      "@parcel/transformer-babel", "@parcel/transformer-js"
+    ]
+  }
+}

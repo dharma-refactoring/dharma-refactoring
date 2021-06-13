@@ -1,6 +1,6 @@
 module Page.Pricing exposing (contents)
 
-import Html exposing (Html, div, text)
+import Html exposing (Html, text)
 import Html.Attributes exposing (class, href, target)
 import Html.Lazy exposing (lazy2)
 import Shared exposing (Message, headline, pageContents, sentense)
