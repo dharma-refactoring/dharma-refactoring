@@ -15,7 +15,8 @@
     "material-components-web-elm": "^2.1.1",
     "node-elm-compiler": "^5.0.6",
     "node-forge": "^0.10.0",
-    "parcel-bundler": "^1.12.4",
+    "normalize-url": "^6.0.1",
+    "parcel-bundler": "^1.12.5",
     "postcss": "^8.2.15",
     "sass": "^1.25.0"
   },
