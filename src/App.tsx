@@ -1,33 +1,60 @@
+import {
+  Box,
+  Container,
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+  Toolbar
+} from '@mui/material'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Header } from './components/Header'
+import { Headline } from './components/Headline'
+import { Menu } from './components/Menu'
+import { Service } from './components/Service'
+
+const mdTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#b71c1c',
+      light: '#f05545',
+      dark: '#7f0000',
+      contrastText: '#ffffff'
+    }
+  }
+})
 
 function App(): JSX.Element {
-  const [count, setCount] = useState(0)
+  const [open, setOpen] = useState(true)
+  const toggleDrawer = (): void => {
+    setOpen(!open)
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ThemeProvider theme={mdTheme}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <Header open={open} toggleMenu={toggleDrawer} />
+        <Menu open={open} toggleMenu={toggleDrawer} />
+        <Box
+          component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto'
+          }}
+        >
+          <Toolbar />
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Headline />
+            <Service />
+          </Container>
+        </Box>
+      </Box>
+    </ThemeProvider>
   )
 }
 
