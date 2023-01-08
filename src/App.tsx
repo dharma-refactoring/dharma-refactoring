@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { Header } from './components/Header'
 import { Headline } from './components/Headline'
 import { Menu } from './components/Menu'
+import { Pricing } from './components/Pricing'
 import { Service } from './components/Service'
 
 const mdTheme = createTheme({
@@ -51,6 +52,7 @@ function App(): JSX.Element {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Headline />
             <Service />
+            <Pricing />
           </Container>
         </Box>
       </Box>

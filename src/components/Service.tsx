@@ -3,46 +3,11 @@ import PhoneIcon from '@mui/icons-material/PhoneIphone'
 import WebIcon from '@mui/icons-material/Web'
 import BuildIcon from '@mui/icons-material/Build'
 import InfoIcon from '@mui/icons-material/Info'
-
-interface TitleProps {
-  icon: JSX.Element
-  text: string
-}
-const Title = ({ icon, text }: TitleProps): JSX.Element => (
-  <Grid
-    item
-    xs={12}
-    sx={{
-      marginTop: '20px',
-      marginBottom: '8px',
-      display: 'flex',
-      alignItems: 'center'
-    }}
-  >
-    {icon}
-    <Typography variant="body1" fontWeight="bold">
-      {text}
-    </Typography>
-  </Grid>
-)
-
-interface DescriptionProps {
-  contents: string[]
-}
-const Description = ({
-  contents: descriptions
-}: DescriptionProps): JSX.Element => (
-  <Grid item xs={12} sx={{ paddingLeft: '28px' }}>
-    {descriptions.map((d, i) => (
-      <Typography key={i} variant="body2">
-        {d}
-      </Typography>
-    ))}
-  </Grid>
-)
+import { Title } from './Title'
+import { Description } from './Description'
 
 export const Service: React.FC = () => (
-  <Grid item xs={12}>
+  <Grid id="service" item xs={12} sx={{ marginBottom: '28px' }}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h6" component="h6">
         サービス内容

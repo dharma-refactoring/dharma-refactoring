@@ -11,6 +11,9 @@ import {
 } from '@mui/material'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import DashboardIcon from '@mui/icons-material/Dashboard'
+import CurrencyYenIcon from '@mui/icons-material/CurrencyYen'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 export const drawerWidth = 200
 
@@ -61,27 +64,27 @@ export const Menu = ({ open, toggleMenu }: MenuProps): JSX.Element => (
     </Toolbar>
     <Divider />
     <List component="nav">
-      <ListItemButton>
+      <ListItemButton href="#service">
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
         <ListItemText primary="サービス内容" />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton href="#pricing">
         <ListItemIcon>
-          <DashboardIcon />
+          <CurrencyYenIcon />
         </ListItemIcon>
         <ListItemText primary="費用" />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton href="#history">
         <ListItemIcon>
-          <DashboardIcon />
+          <LibraryBooksIcon />
         </ListItemIcon>
         <ListItemText primary="開発事例" />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton href="#profile">
         <ListItemIcon>
-          <DashboardIcon />
+          <AccountCircleIcon />
         </ListItemIcon>
         <ListItemText primary="プロフィール" />
       </ListItemButton>
