@@ -3,8 +3,8 @@ import PhoneIcon from '@mui/icons-material/PhoneIphone'
 import WebIcon from '@mui/icons-material/Web'
 import BuildIcon from '@mui/icons-material/Build'
 import InfoIcon from '@mui/icons-material/Info'
-import { Title } from './Title'
-import { Description } from './Description'
+import { Title } from '../components/Title'
+import { Description } from '../components/Description'
 
 export const Service: React.FC = () => (
   <Grid id="service" item xs={12} sx={{ marginBottom: '28px' }}>

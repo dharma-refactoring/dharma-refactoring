@@ -80,7 +80,7 @@ export const Menu = ({ open, toggleMenu }: MenuProps): JSX.Element => (
         <ListItemIcon>
           <LibraryBooksIcon />
         </ListItemIcon>
-        <ListItemText primary="開発事例" />
+        <ListItemText primary="開発実績" />
       </ListItemButton>
       <ListItemButton href="#profile">
         <ListItemIcon>

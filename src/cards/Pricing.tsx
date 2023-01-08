@@ -1,5 +1,5 @@
 import { Grid, Paper, Typography } from '@mui/material'
-import { Description } from './Description'
+import { Description } from '../components/Description'
 
 export const Pricing: React.FC = () => (
   <Grid id="pricing" item xs={12} sx={{ marginBottom: '28px' }}>

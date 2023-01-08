@@ -8,10 +8,12 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 import { Header } from './components/Header'
-import { Headline } from './components/Headline'
 import { Menu } from './components/Menu'
-import { Pricing } from './components/Pricing'
-import { Service } from './components/Service'
+import { Headline } from './cards/Headline'
+import { Pricing } from './cards/Pricing'
+import { Service } from './cards/Service'
+import { History } from './cards/History'
+import { Profile } from './cards/Profile'
 
 const mdTheme = createTheme({
   palette: {
@@ -25,7 +27,7 @@ const mdTheme = createTheme({
 })
 
 function App(): JSX.Element {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const toggleDrawer = (): void => {
     setOpen(!open)
   }
@@ -53,6 +55,8 @@ function App(): JSX.Element {
             <Headline />
             <Service />
             <Pricing />
+            <History />
+            <Profile />
           </Container>
         </Box>
       </Box>
