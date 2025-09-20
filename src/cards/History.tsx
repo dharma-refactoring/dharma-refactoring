@@ -14,6 +14,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 
 import { Title } from '../components/Title'
 import { Description } from '../components/Description'
+import { JSX } from 'react'
 
 interface HistoryItem {
   summary: string
@@ -34,8 +35,8 @@ const HistoryTable = (props: { rows: HistoryItem[] }): JSX.Element => (
       </TableRow>
     </TableHead>
     <TableBody>
-      {props.rows.map((row, i) => (
-        <TableRow key={i}>
+      {props.rows.map((row) => (
+        <TableRow key={row.summary}>
           <TableCell>
             {row.link !== undefined ? (
               <Link href={row.link}>{row.summary}</Link>
@@ -53,7 +54,7 @@ const HistoryTable = (props: { rows: HistoryItem[] }): JSX.Element => (
 )
 
 export const History: React.FC = () => (
-  <Grid id="history" item xs={12} sx={{ marginBottom: '28px' }}>
+  <Grid id="history" component="div" sx={{ marginBottom: '28px' }}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h6" component="h6">
         開発実績

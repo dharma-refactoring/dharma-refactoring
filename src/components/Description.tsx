@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material'
+import { JSX } from 'react'
 
 interface DescriptionProps {
   contents: string[]
@@ -7,9 +8,9 @@ interface DescriptionProps {
 export const Description = ({
   contents: descriptions
 }: DescriptionProps): JSX.Element => (
-  <Grid item xs={12} sx={{ paddingLeft: '28px' }}>
-    {descriptions.map((d, i) => (
-      <Typography key={i} variant="body2">
+  <Grid sx={{ paddingLeft: '28px' }}>
+    {descriptions.map((d) => (
+      <Typography key={d} variant="body2">
         {d}
       </Typography>
     ))}
