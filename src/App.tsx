@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   Toolbar
 } from '@mui/material'
-import { useState } from 'react'
+import { JSX, useState } from 'react'
 import { Header } from './components/Header'
 import { Menu } from './components/Menu'
 import { Headline } from './cards/Headline'

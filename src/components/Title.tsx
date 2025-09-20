@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material'
+import { JSX } from 'react'
 
 interface TitleProps {
   icon: JSX.Element
@@ -7,8 +8,6 @@ interface TitleProps {
 
 export const Title = ({ icon, text }: TitleProps): JSX.Element => (
   <Grid
-    item
-    xs={12}
     sx={{
       marginTop: '20px',
       marginBottom: '8px',

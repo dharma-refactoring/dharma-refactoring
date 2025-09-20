@@ -1,7 +1,7 @@
 import { Grid, Paper, Typography, Link } from '@mui/material'
 
 export const Headline: React.FC = () => (
-  <Grid item xs={12} sx={{ marginBottom: '28px' }}>
+  <Grid sx={{ marginBottom: '28px' }}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="body1">
         現在は本業の合間に副業でフリーランスエンジニアとして活動しています。

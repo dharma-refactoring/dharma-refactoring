@@ -7,7 +7,7 @@ import { Title } from '../components/Title'
 import { Description } from '../components/Description'
 
 export const Service: React.FC = () => (
-  <Grid id="service" item xs={12} sx={{ marginBottom: '28px' }}>
+  <Grid id="service" sx={{ marginBottom: '28px' }}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h6" component="h6">
         サービス内容

@@ -14,6 +14,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import CurrencyYenIcon from '@mui/icons-material/CurrencyYen'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import { JSX } from 'react'
 
 export const drawerWidth = 200
 

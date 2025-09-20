@@ -2,7 +2,7 @@ import { Grid, Paper, Typography } from '@mui/material'
 import { Description } from '../components/Description'
 
 export const Pricing: React.FC = () => (
-  <Grid id="pricing" item xs={12} sx={{ marginBottom: '28px' }}>
+  <Grid id="pricing" sx={{ marginBottom: '28px' }}>
     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h6" component="h6">
         費用

@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { drawerWidth } from './Menu'
+import { JSX } from 'react'
 
 interface CustomAppBarProps extends AppBarProps {
   open: boolean
