@@ -2,4 +2,4 @@
 
 これは https://dharma-refactoring.com のソースコードです。
 
-vite で構築しています。
+astro で構築しています。

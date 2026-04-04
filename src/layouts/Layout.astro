@@ -1,0 +1,38 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>だるまRefactoring | ポートフォリオ</title>
+  <!-- クラスレスCSSを使った極めてシンプルなスタイリング -->
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <meta name="description" content="だるまRefactoring（青木 美将）のポートフォリオサイト。生成AIを活用したWeb/スマートフォンアプリのシステム開発を提供します。">
+  <style>
+    :root {
+      /* コーポレートカラー（赤）をアクセントカラーとして適用 */
+      --accent: #b71c1c;
+      --accent-hover: #7f0000;
+    }
+    
+    /* 見出し（h1, h2, h3）のフォントサイズをやや小さめに抑える調整 */
+    h1 { font-size: 2rem; margin-top: 1.5rem; }
+    h2 { font-size: 1.5rem; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>だるまRefactoring</h1>
+  </header>
+  
+  <main>
+    <slot />
+  </main>
+  
+  <footer>
+    <p>&copy; {new Date().getFullYear()} だるまRefactoring</p>
+  </footer>
+</body>
+</html>
