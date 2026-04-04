@@ -64,16 +64,22 @@ export const History: React.FC = () => (
       <HistoryTable
         rows={[
           {
+            summary: 'WordPressサイト + Laravelサイトのサーバ移行',
+            skill: 'WordPress, PHP, Laravel, MySQL, さくらのVPS',
+            position: 'エンジニア',
+            phase: '仕様書がないレガシーコードの分析、サーバ構築、移行、保守'
+          },
+          {
             summary: 'さけコミ',
             link: 'https://sakecom.jp',
             skill: 'Elm, Ruby on Rails, PostgreSQL, GCP(Cloud Run)',
-            position: 'SE, PG, テスタ',
+            position: 'エンジニア',
             phase: '仕様検討、設計、実装、単体/結合テスト、運用保守'
           },
           {
             summary: 'キャンプ場予約Webシステム',
             skill: 'PHP, Cake PHP, MySQL, Docker',
-            position: 'PG, テスタ',
+            position: 'エンジニア',
             phase: '実装、単体/結合テスト'
           }
         ]}
@@ -87,6 +93,12 @@ export const History: React.FC = () => (
       />
       <HistoryTable
         rows={[
+          {
+            summary: '楽器と連携するスマホアプリ',
+            skill: 'Flutter, Dart, fastlane, MIDI, BLE, Figma',
+            position: '開発チーム',
+            phase: 'アジャイル開発（スクラム）'
+          },
           {
             summary: '電力会社向け顧客管理システム',
             skill: 'Typescript, NestJS, Prisma, Vite, React, AWS',
